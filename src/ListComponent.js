@@ -1,21 +1,18 @@
 import React, { Component } from 'react';
+import ListItem from './ListItemComponent'
 
 class List extends Component {
   render() {
+    console.log(this.props);
+    let todos = this.props.todos;
+    let items = todos.map((item, index) => {
+        return (
+            <ListItem key={index} title={item.title} content={item.content}/>
+        );
+    });
     return (
       <div className="list">
-        <div className="list-item">
-            <h3>Item 1</h3>
-            <p>some randon stuff</p>
-        </div>
-        <div className="list-item">
-            <h3>Item 2</h3>
-            <p>sklfsdklfjsdfljslkfjsdlfjsdfljsdlfkjsdlkfjs</p>
-        </div>
-        <div className="list-item">
-            <h3>Item 3</h3>
-            <p>sklfsdklfjsdfljslkfjsdlfjsdfljsdlfkjsdlkfjs</p>
-        </div>
+        {items}
       </div>
     );
   }

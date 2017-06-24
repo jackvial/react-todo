@@ -3,6 +3,20 @@ import logo from './logo.svg';
 import './App.css';
 import List from './ListComponent'
 
+let todos = [
+  {
+    title: 'One',
+    content: 'bananas'
+  },
+  {
+    title: 'Two',
+    content: 'cheese burger'
+  },
+  {
+    title: 'Three',
+    content: 'apples'
+  }
+];
 class App extends Component {
   render() {
     return (
@@ -14,7 +28,7 @@ class App extends Component {
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
-        <List/>
+        <List todos={todos}/>
       </div>
     );
   }
